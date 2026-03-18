@@ -50,18 +50,21 @@
         <div class="hero-overlay"></div>
         <div class="hero-hex" aria-hidden="true"></div>
 
-        <!-- Shield badge decoration — top right -->
-        <div class="crosshair-wrap" id="crosshairWrap" aria-hidden="true">
-            <svg class="shield-badge-svg" viewBox="0 0 80 90">
-                <path d="M40 6 L72 20 L72 48 C72 66 55 79 40 88 C25 79 8 66 8 48 L8 20 Z" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.75"/>
-                <text x="40" y="50" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="9" letter-spacing="1.5" fill="currentColor" opacity="0.9">ΑΠΘ</text>
-                <text x="40" y="63" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="7.5" letter-spacing="0.8" fill="currentColor" opacity="0.7">ASP®</text>
-            </svg>
-            <span class="ch-label">AUTH · 2018</span>
+        <div class="hero-photo-group">
+            <div class="hero-photo-wrap">
+                <img src="photo.jpg" alt="Σταύρος Μάλλιαρης" class="hero-photo"
+                     onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600&h=800'">
+            </div>
+            <!-- Shield badge overlays bottom-right of photo -->
+            <div class="crosshair-wrap" id="crosshairWrap" aria-hidden="true">
+                <svg class="shield-badge-svg" viewBox="0 0 80 90">
+                    <path d="M40 6 L72 20 L72 48 C72 66 55 79 40 88 C25 79 8 66 8 48 L8 20 Z" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.75"/>
+                    <text x="40" y="50" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="9" letter-spacing="1.5" fill="currentColor" opacity="0.9">ΑΠΘ</text>
+                    <text x="40" y="63" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="7.5" letter-spacing="0.8" fill="currentColor" opacity="0.7">ASP®</text>
+                </svg>
+                <span class="ch-label">AUTH</span>
+            </div>
         </div>
-
-        <img src="photo.jpg" alt="Σταύρος Μάλλιαρης" class="hero-photo"
-             onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600&h=800'">
 
         <div class="hero-inner">
             <div class="hero-credential">
@@ -75,7 +78,7 @@
             <a href="#contact" class="btn-accent" data-i18n="hero.cta">Επικοινωνία</a>
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <span class="stat-num" data-i18n="hero.stat1.num">7+</span>
+                    <span class="stat-num" data-i18n="hero.stat1.num" data-countup="7" data-suffix="+">7+</span>
                     <span class="stat-lbl" data-i18n="hero.stat1.lbl">χρόνια εμπειρίας</span>
                 </div>
                 <div class="hero-stat-sep"></div>
@@ -116,107 +119,70 @@
         <div class="about-grid">
             <div class="about-content" data-reveal>
                 <div class="eyebrow"><span data-i18n="about.eyebrow">Σχετικά</span></div>
-                <h2 class="section-heading light" data-i18n-html="about.heading">Εμπειρία &amp; <em>Εξειδίκευση</em></h2>
-                <p class="about-lead" data-i18n-html="about.lead">
-                    Διπλωματούχος Πολιτικός Μηχανικός ΑΠΘ, πιστοποιημένος <strong>ASP®</strong>, με 7+ χρόνια διεθνούς εμπειρίας σε Υγεία &amp; Ασφάλεια εργαζομένων. Εξειδικεύομαι στην εκπόνηση Γραπτής Εκτίμησης Επαγγελματικού Κινδύνου, εκπαιδεύσεις Υ&amp;Α και σχέδια εκκένωσης.
-                </p>
+                <div class="heading-helmet-wrap">
+                    <h2 class="section-heading" data-i18n-html="about.heading">Εμπειρία &amp; <em>Εξειδίκευση</em></h2>
+                    <div class="heading-helmet" aria-hidden="true">
+                        <svg id="helmetSvg" viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 58 Q18 44 30 32 Q44 18 60 16 Q76 18 90 32 Q102 44 100 58 Z"
+                                  fill="var(--accent)" opacity="0.92"/>
+                            <rect x="12" y="56" width="96" height="9" rx="4.5"
+                                  fill="var(--accent2)" opacity="0.85"/>
+                            <path d="M46 22 Q60 19 74 22 L74 38 Q60 35 46 38 Z"
+                                  fill="white" opacity="0.18"/>
+                            <path d="M53 30 L60 27 L67 30 L67 39 C67 44 60 47 60 47 C60 47 53 44 53 39 Z"
+                                  fill="white" opacity="0.35"/>
+                            <text x="60" y="40" text-anchor="middle"
+                                  font-family="Space Grotesk,sans-serif" font-size="6"
+                                  fill="white" opacity="0.8">ASP</text>
+                        </svg>
+                    </div>
+                </div>
                 <div class="dim-row" data-dim>
-                    <div class="dim-tick"></div>
-                    <div class="dim-bar dim-l"></div>
-                    <span class="dim-value"><span data-i18n="about.dim">Ελλάδα &amp; Διεθνώς</span></span>
-                    <div class="dim-bar dim-r"></div>
-                    <div class="dim-tick"></div>
+
                 </div>
                 <div class="about-features">
                     <div class="feature-row" data-reveal>
                         <i class="fa-solid fa-magnifying-glass-chart"></i>
-                        <strong data-i18n="feature.risk.label">Εκτίμηση Κινδύνου</strong>
-                        <span data-i18n="feature.risk.text">Συστηματική ανάλυση κινδύνων &amp; προληπτικά μέτρα</span>
+                        <div><strong data-i18n="feature.risk.label">Εκτίμηση Κινδύνου</strong>
+                        <span data-i18n="feature.risk.text">Συστηματική ανάλυση κινδύνων &amp; προληπτικά μέτρα</span></div>
                     </div>
                     <div class="feature-row" data-reveal>
                         <i class="fa-solid fa-sliders"></i>
-                        <strong data-i18n="feature.custom.label">Εξατομικευμένη Λύση</strong>
-                        <span data-i18n="feature.custom.text">Προσαρμοσμένο πλάνο ανά επιχείρηση &amp; κλάδο</span>
+                        <div><strong data-i18n="feature.custom.label">Εξατομικευμένη Λύση</strong>
+                        <span data-i18n="feature.custom.text">Προσαρμοσμένο πλάνο ανά επιχείρηση &amp; κλάδο</span></div>
                     </div>
                     <div class="feature-row" data-reveal>
                         <i class="fa-solid fa-shield-halved"></i>
-                        <strong data-i18n="feature.compliance.label">Νομική Συμμόρφωση</strong>
-                        <span data-i18n="feature.compliance.text">Πλήρης κάλυψη Ν.3850/2010 &amp; Ευρωπαϊκών οδηγιών</span>
+                        <div><strong data-i18n="feature.compliance.label">Νομική Συμμόρφωση</strong>
+                        <span data-i18n="feature.compliance.text">Πλήρης κάλυψη Ν.3850/2010 &amp; Ευρωπαϊκών οδηγιών</span></div>
                     </div>
                 </div>
             </div>
 
             <div class="about-aside" data-reveal>
-                <!-- Helmet widget -->
-                <div class="helmet-wrap" id="helmetWrap" aria-hidden="true">
-                    <svg id="helmetSvg" viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Hard hat dome -->
-                        <path d="M20 58 Q18 44 30 32 Q44 18 60 16 Q76 18 90 32 Q102 44 100 58 Z"
-                              fill="var(--accent)" opacity="0.92"/>
-                        <!-- Brim -->
-                        <rect x="12" y="56" width="96" height="9" rx="4.5"
-                              fill="var(--accent2)" opacity="0.85"/>
-                        <!-- Vent stripe -->
-                        <path d="M46 22 Q60 19 74 22 L74 38 Q60 35 46 38 Z"
-                              fill="white" opacity="0.18"/>
-                        <!-- Shield badge on helmet -->
-                        <path d="M53 30 L60 27 L67 30 L67 39 C67 44 60 47 60 47 C60 47 53 44 53 39 Z"
-                              fill="white" opacity="0.35"/>
-                        <text x="60" y="40" text-anchor="middle"
-                              font-family="Space Grotesk,sans-serif" font-size="6"
-                              fill="white" opacity="0.8">ASP</text>
-                    </svg>
-                </div>
-
-                <!-- Compliance gauge -->
-                <div class="compliance-card" id="complianceGauge" data-target="92">
-                    <div class="gauge-label" data-i18n="gauge.label">Συμμόρφωση</div>
-                    <svg viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Track arc -->
+                <!-- Safety Quiz Game -->
+                <div class="sq-gauge-block" id="complianceGauge">
+                    <div class="sq-gauge-title" id="sqGaugeTitle">Επίπεδο Ασφάλειάς σας</div>
+                    <svg class="sq-gauge-svg" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M 28 100 A 72 72 0 0 1 172 100"
-                              stroke="rgba(255,255,255,0.12)" stroke-width="10"
-                              stroke-linecap="round" fill="none"/>
-                        <!-- Fill arc -->
+                              stroke="#DDE5EE" stroke-width="10" stroke-linecap="round" fill="none"/>
                         <path id="gaugeArcFill" d="M 28 100 A 72 72 0 0 1 172 100"
-                              stroke="var(--accent)" stroke-width="10"
-                              stroke-linecap="round" fill="none"
+                              stroke="#E8541A" stroke-width="10" stroke-linecap="round" fill="none"
                               style="stroke-dasharray:0 226.195; stroke-dashoffset:0"/>
-                        <!-- Needle -->
                         <line id="gaugeNeedle" x1="100" y1="100" x2="100" y2="34"
-                              stroke="white" stroke-width="2" stroke-linecap="round"
+                              stroke="#0F1929" stroke-width="2" stroke-linecap="round"
                               transform="rotate(-90 100 100)"/>
-                        <circle cx="100" cy="100" r="5" fill="white" opacity="0.9"/>
-                        <!-- Value text -->
+                        <circle cx="100" cy="100" r="5" fill="#0F1929" opacity="0.65"/>
                         <text id="gaugeValue" x="100" y="88"
                               text-anchor="middle"
                               font-family="Space Grotesk,sans-serif" font-size="22" font-weight="700"
-                              fill="white">0%</text>
+                              fill="#0F1929">0%</text>
                     </svg>
+                    <p class="sq-status" id="sqStatus"></p>
                 </div>
 
-                <!-- Checklist -->
-                <div class="checklist-wrap" data-checklist-container>
-                    <div class="cl-item">
-                        <i class="fa-regular fa-circle-check cl-icon"></i>
-                        <span data-i18n="cl.item1">ΓΕΕΚ εκπονημένο</span>
-                    </div>
-                    <div class="cl-item">
-                        <i class="fa-regular fa-circle-check cl-icon"></i>
-                        <span data-i18n="cl.item2">Εκπαίδευση εργαζομένων</span>
-                    </div>
-                    <div class="cl-item">
-                        <i class="fa-regular fa-circle-check cl-icon"></i>
-                        <span data-i18n="cl.item3">Σχέδιο εκκένωσης</span>
-                    </div>
-                    <div class="cl-item">
-                        <i class="fa-regular fa-circle-check cl-icon"></i>
-                        <span data-i18n="cl.item4">Σήμανση ασφαλείας</span>
-                    </div>
-                    <div class="cl-item">
-                        <i class="fa-regular fa-circle-check cl-icon"></i>
-                        <span data-i18n="cl.item5">Ν.3850/2010 συμμόρφωση</span>
-                    </div>
-                </div>
+                <!-- Quiz questions — populated by safety-animations.js -->
+                <div class="sq-questions" id="sqQuestions"></div>
             </div>
         </div>
     </section>
@@ -225,8 +191,10 @@
     <section class="services-section" id="services">
         <div class="services-header">
             <div data-reveal>
-                <div class="eyebrow"><span data-i18n="services.eyebrow">Τι προσφέρουμε</span></div>
-                <h2 class="section-heading" data-i18n-html="services.heading">Οι <em>Υπηρεσίες</em> μας</h2>
+                <div class="eyebrow"><span data-i18n="services.eyebrow">Εξασφαλίστε κορυφαίες συνθήκες Υγείας &amp; Ασφάλειας</span></div>
+                <h2 class="section-heading" data-i18n-html="services.heading">Παρέχουμε ένα πλήρες πακέτο <em>Υπηρεσιών Υ&amp;Α</em></h2>
+                <p class="services-lead" data-i18n="services.lead">Από την ικανοποίηση των νομικών απαιτήσεων έως την διαμόρφωση κουλτούρας πρόληψης στην εταιρεία σας, έχουμε τις λύσεις.</p>
+                <p class="services-legal" data-i18n-html="services.legal">Σύμφωνα με το Ν. 3850/2010, ακόμα και για ένα άτομο προσωπικό η επιχείρηση πρέπει να έχει Τεχνικό Ασφαλείας και ΓΕΕΚ — <strong>Νόμος 3850/2010, Άρθρο 8 &amp; 43</strong></p>
             </div>
         </div>
 
@@ -281,8 +249,9 @@
     <!-- ===== SECTORS ===== -->
     <section class="sectors-section" id="sectors">
         <div class="sectors-header" data-reveal>
-            <div class="eyebrow"><span data-i18n="sectors.eyebrow">Κλάδοι</span></div>
-            <h2 class="section-heading light" data-i18n-html="sectors.heading">Τομείς <em>Δραστηριότητας</em></h2>
+            <div class="eyebrow"><span data-i18n="sectors.eyebrow">Τομείς Δραστηριότητας</span></div>
+            <h2 class="section-heading" data-i18n-html="sectors.heading">Τομείς <em>Δραστηριότητας</em></h2>
+            <p class="sectors-lead" data-i18n="sectors.lead">Μετά από πολυετή εμπειρία σε απαιτητικά έργα υποδομών και επιχειρήσεις κάθε είδους, ο Σταύρος Μάλλιαρης και η ομάδα του μπορούν να συμβουλέψουν πελάτες από κάθε τομέα δραστηριότητας.</p>
         </div>
 
         <!-- Crane decoration -->
@@ -319,34 +288,34 @@
 
         <div class="sectors-grid">
             <div class="sector-card" data-reveal>
-                <div class="sector-icon-wrap"><i class="fa-solid fa-helmet-safety"></i></div>
-                <h3 data-i18n="sec1.title">Κατασκευές</h3>
-                <p data-i18n="sec1.text">Εργοτάξια, ανακαινίσεις, τεχνικά έργα — πλήρης Υ&amp;Α κάλυψη.</p>
-            </div>
-            <div class="sector-card" data-reveal>
-                <div class="sector-icon-wrap"><i class="fa-solid fa-industry"></i></div>
-                <h3 data-i18n="sec2.title">Βιομηχανία</h3>
-                <p data-i18n="sec2.text">Εργοστάσια, αποθήκες, παραγωγικές μονάδες υψηλού κινδύνου.</p>
+                <div class="sector-icon-wrap"><i class="fa-solid fa-utensils"></i></div>
+                <h3 data-i18n="sec1.title">Εστίαση και Τουρισμός</h3>
+                <ul class="sector-list" data-i18n-html="sec1.text"></ul>
             </div>
             <div class="sector-card" data-reveal>
                 <div class="sector-icon-wrap"><i class="fa-solid fa-store"></i></div>
-                <h3 data-i18n="sec3.title">Λιανικό Εμπόριο</h3>
-                <p data-i18n="sec3.text">Καταστήματα, εμπορικά κέντρα, logistics — ασφάλεια πελατών &amp; προσωπικού.</p>
+                <h3 data-i18n="sec2.title">Εμπόριο και Υπηρεσίες</h3>
+                <ul class="sector-list" data-i18n-html="sec2.text"></ul>
             </div>
             <div class="sector-card" data-reveal>
-                <div class="sector-icon-wrap"><i class="fa-solid fa-hotel"></i></div>
-                <h3 data-i18n="sec4.title">Φιλοξενία</h3>
-                <p data-i18n="sec4.text">Ξενοδοχεία, εστιατόρια, τουριστικές εγκαταστάσεις — HACCP &amp; πυρασφάλεια.</p>
+                <div class="sector-icon-wrap"><i class="fa-solid fa-helmet-safety"></i></div>
+                <h3 data-i18n="sec3.title">Κατασκευές και Υποδομές</h3>
+                <ul class="sector-list" data-i18n-html="sec3.text"></ul>
             </div>
             <div class="sector-card" data-reveal>
-                <div class="sector-icon-wrap"><i class="fa-solid fa-hospital"></i></div>
-                <h3 data-i18n="sec5.title">Υγειονομικές Μονάδες</h3>
-                <p data-i18n="sec5.text">Κλινικές, ιατρεία, εργαστήρια — βιολογικοί &amp; χημικοί κίνδυνοι.</p>
+                <div class="sector-icon-wrap"><i class="fa-solid fa-truck"></i></div>
+                <h3 data-i18n="sec4.title">Μεταφορές και Logistics</h3>
+                <ul class="sector-list" data-i18n-html="sec4.text"></ul>
             </div>
             <div class="sector-card" data-reveal>
-                <div class="sector-icon-wrap"><i class="fa-solid fa-ship"></i></div>
-                <h3 data-i18n="sec6.title">Ναυτιλία &amp; Λιμάνια</h3>
-                <p data-i18n="sec6.text">Πλοία, λιμενικές εγκαταστάσεις — διεθνή πρότυπα ISM &amp; ISPS.</p>
+                <div class="sector-icon-wrap"><i class="fa-solid fa-bolt"></i></div>
+                <h3 data-i18n="sec5.title">Ενέργεια και Περιβάλλον</h3>
+                <ul class="sector-list" data-i18n-html="sec5.text"></ul>
+            </div>
+            <div class="sector-card" data-reveal>
+                <div class="sector-icon-wrap"><i class="fa-solid fa-industry"></i></div>
+                <h3 data-i18n="sec6.title">Βιομηχανία και Παραγωγή</h3>
+                <ul class="sector-list" data-i18n-html="sec6.text"></ul>
             </div>
         </div>
     </section>
@@ -355,7 +324,7 @@
     <section class="in-action-section">
         <div class="in-action-header" data-reveal>
             <div class="eyebrow"><span data-i18n="action.eyebrow">Στη Δράση</span></div>
-            <h2 class="section-heading" data-i18n-html="action.heading">Εικόνες <em>Πεδίου</em></h2>
+            <h2 class="section-heading" data-i18n-html="action.heading">Επί το <em>Έργω</em></h2>
         </div>
         <div class="action-grid">
             <div class="action-photo-wrap" data-reveal>
@@ -367,7 +336,7 @@
             <div class="action-photo-wrap" data-reveal>
                 <img src="in_action_2.jpg" alt="Σταύρος Μάλλιαρης — Εκπαίδευση Υ&amp;Α στο Πεδίο">
                 <div class="action-caption">
-                    <span data-i18n="action.cap2">Εκπαίδευση &amp; Αξιολόγηση Κινδύνου</span>
+                    <span data-i18n="action.cap2">Εκπαίδευση Αξιολόγηση Κινδύνου</span>
                 </div>
             </div>
         </div>
@@ -378,8 +347,9 @@
         <div class="quote-inner">
             <i class="fa-solid fa-shield-halved quote-icon"></i>
             <blockquote data-i18n="quote.text">
-                "Η ασφάλεια δεν είναι δαπάνη — είναι επένδυση στους ανθρώπους σας."
+                «Στόχος μας είναι η μετατροπή της ασφάλειας από τυπική υποχρέωση σε ουσιαστικό πλεονέκτημα για την επιχείρησή σας»
             </blockquote>
+            <cite class="quote-author" data-i18n="quote.author">Σταύρος Μάλλιαρης — Μηχανικός Υγείας και Ασφάλειας, MEng, ASP®</cite>
         </div>
     </div>
 
@@ -391,22 +361,40 @@
         </div>
         <div class="resources-grid">
             <div class="resource-card" data-reveal>
-                <div class="resource-icon"><i class="fa-solid fa-file-pdf"></i></div>
-                <h3 data-i18n="res1.title">Οδηγός ΓΕΕΚ</h3>
-                <p data-i18n="res1.text">Βήμα-βήμα οδηγίες για εκπόνηση Γραπτής Εκτίμησης Επαγγελματικού Κινδύνου.</p>
-                <span class="coming-soon-badge" data-i18n="res.soon">Σύντομα</span>
+                <div class="resource-icon"><i class="fa-solid fa-book"></i></div>
+                <h3 data-i18n="res1.title">ΕΛΙΝΥΑΕ</h3>
+                <p data-i18n="res1.text">Ελληνικό Ινστιτούτο Υγιεινής και Ασφάλειας της Εργασίας — εκδόσεις, μελέτες, εκπαίδευση και ενημέρωση για Υ&amp;Α.</p>
+                <a href="https://www.elinyae.gr/" target="_blank" rel="noopener" class="resource-link" data-i18n="res.visit">Επίσκεψη <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <div class="resource-card" data-reveal>
-                <div class="resource-icon"><i class="fa-solid fa-list-check"></i></div>
-                <h3 data-i18n="res2.title">Checklist Ασφαλείας Εργοταξίου</h3>
-                <p data-i18n="res2.text">Πρακτική λίστα ελέγχου για εβδομαδιαίες επιθεωρήσεις εργοταξίου.</p>
-                <span class="coming-soon-badge" data-i18n="res.soon">Σύντομα</span>
+                <div class="resource-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                <h3 data-i18n="res2.title">Νόμος 3850/2010</h3>
+                <p data-i18n="res2.text">Κωδικοποιημένο κείμενο του Ν. 3850/2010 — ο βασικός νόμος για την Υγεία και Ασφάλεια στην Εργασία στην Ελλάδα.</p>
+                <a href="https://www.e-nomothesia.gr/kat-ergasia-koinonike-asphalise/n-3850-2010.html" target="_blank" rel="noopener" class="resource-link" data-i18n="res.visit">Επίσκεψη <i class="fa-solid fa-arrow-right"></i></a>
             </div>
             <div class="resource-card" data-reveal>
-                <div class="resource-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h3 data-i18n="res3.title">Εγχειρίδιο Εκπαίδευσης ΜΑΠ</h3>
-                <p data-i18n="res3.text">Πλήρες εγχειρίδιο επιλογής &amp; ορθής χρήσης Μέσων Ατομικής Προστασίας.</p>
-                <span class="coming-soon-badge" data-i18n="res.soon">Σύντομα</span>
+                <div class="resource-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h3 data-i18n="res3.title">Επιθεώρηση Εργασίας</h3>
+                <p data-i18n="res3.text">Επίσημος φορέας ελέγχου εφαρμογής της εργατικής νομοθεσίας — υποχρεώσεις εργοδότη, Τεχνικός Ασφαλείας, έντυπα.</p>
+                <a href="https://www.hli.gov.gr/asfaleia-kai-ygeia/" target="_blank" rel="noopener" class="resource-link" data-i18n="res.visit">Επίσκεψη <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="resource-card" data-reveal>
+                <div class="resource-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                <h3 data-i18n="res4.title">OiRA — Εκτίμηση Κινδύνου</h3>
+                <p data-i18n="res4.text">Διαδραστικά εργαλεία εκτίμησης επαγγελματικού κινδύνου ανά κλάδο, εκδοθέντα από το Υπ. Εργασίας &amp; EU-OSHA.</p>
+                <a href="https://oira.osha.europa.eu/en/Partners/hellenic-ministry-labour-and-social-affairs" target="_blank" rel="noopener" class="resource-link" data-i18n="res.visit">Επίσκεψη <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="resource-card" data-reveal>
+                <div class="resource-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <h3 data-i18n="res5.title">Αναγγελία Εργατικού Ατυχήματος</h3>
+                <p data-i18n="res5.text">Επίσημη διαδικασία αναγγελίας εργατικού ατυχήματος μέσω gov.gr — υποχρεώσεις εργοδότη και βήματα υποβολής.</p>
+                <a href="https://www.gov.gr/upourgeia/oloi-foreis/epitheorese-ergasias/anaggelia-ergatikou-atukhematos" target="_blank" rel="noopener" class="resource-link" data-i18n="res.visit">Επίσκεψη <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="resource-card" data-reveal>
+                <div class="resource-icon"><i class="fa-solid fa-file-contract"></i></div>
+                <h3 data-i18n="res6.title">Νομοθεσία Υ&amp;Α — Υπ. Εργασίας</h3>
+                <p data-i18n="res6.text">Πλήρης νομοθεσία για την Υγεία &amp; Ασφάλεια στην Εργασία από το Υπουργείο Εργασίας — νόμοι, ΠΔ και υπουργικές αποφάσεις.</p>
+                <a href="https://ypergasias.gov.gr/ergasiakes-scheseis/ygeia-kai-asfaleia-stin-ergasia/nomothesia-gia-tin-yae/" target="_blank" rel="noopener" class="resource-link" data-i18n="res.visit">Επίσκεψη <i class="fa-solid fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -556,6 +544,36 @@
         });
         /* Close on Escape key */
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+        /* Count-up animation for [data-countup] elements */
+        (function () {
+            function runCountUp(el) {
+                var target = parseInt(el.getAttribute('data-countup'), 10);
+                var suffix = el.getAttribute('data-suffix') || '';
+                var duration = 1800;
+                var start = null;
+                function ease(t) { return 1 - Math.pow(1 - t, 3); }
+                function step(ts) {
+                    if (!start) start = ts;
+                    var progress = Math.min((ts - start) / duration, 1);
+                    el.textContent = Math.round(ease(progress) * target) + suffix;
+                    if (progress < 1) requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
+            }
+            var els = document.querySelectorAll('[data-countup]');
+            if (!els.length) return;
+            if ('IntersectionObserver' in window) {
+                var obs = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (e) {
+                        if (e.isIntersecting) { runCountUp(e.target); obs.unobserve(e.target); }
+                    });
+                }, { threshold: 0.5 });
+                els.forEach(function (el) { obs.observe(el); });
+            } else {
+                els.forEach(runCountUp);
+            }
+        })();
 
         /* Contact form */
         function handleSubmit(e) {

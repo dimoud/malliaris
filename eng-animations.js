@@ -216,7 +216,7 @@
                     );
                     var idx = siblings.indexOf(entry.target);
                     setTimeout(function () {
-                        entry.target.classList.add('visible');
+                        entry.target.classList.add('revealed');
                     }, idx * 120);
                     revealObs.unobserve(entry.target);
                 }
@@ -224,7 +224,7 @@
         }, { threshold: 0.1 });
         revealEls.forEach(function (el) { revealObs.observe(el); });
     } else {
-        revealEls.forEach(function (el) { el.classList.add('visible'); });
+        revealEls.forEach(function (el) { el.classList.add('revealed'); });
     }
 
     /* ─── 0. SCROLL PROGRESS BAR ─────────────────────────────────────────── */
