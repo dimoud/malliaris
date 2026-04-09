@@ -249,6 +249,16 @@
         'res5.text':  { el: 'Επίσημη διαδικασία αναγγελίας εργατικού ατυχήματος μέσω gov.gr — υποχρεώσεις εργοδότη και βήματα υποβολής.', en: 'Official workplace accident reporting process via gov.gr — employer obligations and submission steps.' },
         'res6.title': { el: 'sepenet.gr', en: 'sepenet.gr' },
         'res6.text':  { el: 'Πλατφόρμα για την online αναγγελία Τεχνικού Ασφαλείας στο ΣΕΠΕ — γρήγορη και εύκολη ηλεκτρονική διαδικασία.', en: 'Platform for online registration of Safety Officers with SEPE — quick and easy process.' },
+        'res7.title': { el: 'EU-OSHA', en: 'EU-OSHA' },
+        'res7.text':  { el: 'Ευρωπαϊκός Οργανισμός για την Ασφάλεια & Υγεία στην Εργασία — οδηγοί, εκστρατείες και βέλτιστες πρακτικές.', en: 'European Agency for Safety & Health at Work — guides, campaigns and best practices.' },
+        'res8.title': { el: 'ILO — Διεθνής Εργασία', en: 'ILO — International Labour' },
+        'res8.text':  { el: 'Διεθνής Οργανισμός Εργασίας — πρότυπα, εργαλεία και εκπαιδευτικό υλικό για Υ&Α παγκοσμίως.', en: 'International Labour Organization — global H&S standards, tools and training resources.' },
+        'res9.title': { el: 'ΙΚΑ — Εργατικά Ατυχήματα', en: 'IKA — Occupational Accidents' },
+        'res9.text':  { el: 'Οδηγός αποζημίωσης εργατικών ατυχημάτων και επαγγελματικών ασθενειών μέσω ΕΦΚΑ/ΙΚΑ.', en: 'Guide to compensation for workplace accidents and occupational diseases via EFKA/IKA.' },
+        'res10.title': { el: 'ΚΕΕΛΠΝΟ / ΕΟΔΥ', en: 'EODY — Public Health' },
+        'res10.text':  { el: 'Εθνικός Οργανισμός Δημόσιας Υγείας — πρωτόκολλα υγιεινής και ασφάλειας για εργασιακούς χώρους.', en: 'National Public Health Organisation — workplace hygiene and safety protocols.' },
+        'res11.title': { el: 'ΑΣΕΠ — Τεχνικός Ασφαλείας', en: 'ASEP — Safety Officer' },
+        'res11.text':  { el: 'Επίσημος κατάλογος πιστοποιημένων Τεχνικών Ασφαλείας και προϋποθέσεις αναγνώρισης προσόντων.', en: 'Official registry of certified Safety Officers and qualification recognition requirements.' },
         'res.visit':  { el: 'Επίσκεψη', en: 'Visit' },
 
         /* CONTACT */

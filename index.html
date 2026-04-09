@@ -15,24 +15,25 @@
 
     <div id="progress"></div>
 
-    <!-- Mobile-only language bar — very top of page -->
-    <div class="lang-bar-mobile" id="langBarMobile">
-        <button class="lang-btn active" data-lang="el" onclick="setLang('el')"><img src="https://flagcdn.com/w20/gr.png" alt="GR" class="flag-icon"> <span class="lcode">ΕΛ</span></button>
-        <div class="lang-sep"></div>
-        <button class="lang-btn" data-lang="en" onclick="setLang('en')"><img src="https://flagcdn.com/w20/gb.png" alt="EN" class="flag-icon"> <span class="lcode">EN</span></button>
-    </div>
-
     <!-- ===== NAVIGATION ===== -->
     <nav id="nav">
-        <a href="#" class="nav-logo">
-            <div class="logo-rect">
-                <img src="Image 2.png" alt="Σ. Μάλλιαρης" onerror="this.style.display='none'">
+        <div class="nav-logo-group">
+            <a href="#" class="nav-logo">
+                <div class="logo-rect">
+                    <img src="Image 2.png" alt="Σ. Μάλλιαρης" onerror="this.style.display='none'">
+                </div>
+                <div class="logo-text">
+                    <span class="name" data-i18n="name.stavros">Σταύρος Μάλλιαρης</span>
+                    <span class="title" data-i18n="nav.title">Τεχνικός Ασφαλείας - Σύμβουλος Υγείας και Ασφάλειας</span>
+                </div>
+            </a>
+            <div class="nav-logo-lang-sep"></div>
+            <div class="nav-logo-lang" id="navLogoLang">
+                <button class="lang-btn active" data-lang="el" onclick="setLang('el')"><img src="https://flagcdn.com/w20/gr.png" alt="GR" class="flag-icon"> <span class="lcode">ΕΛ</span></button>
+                <div class="lang-sep"></div>
+                <button class="lang-btn" data-lang="en" onclick="setLang('en')"><img src="https://flagcdn.com/w20/gb.png" alt="EN" class="flag-icon"> <span class="lcode">EN</span></button>
             </div>
-            <div class="logo-text">
-                <span class="name" data-i18n="name.stavros">Σταύρος Μάλλιαρης</span>
-                <span class="title" data-i18n="nav.title">Τεχνικός Ασφαλείας - Σύμβουλος Υγείας και Ασφάλειας</span>
-            </div>
-        </a>
+        </div>
         <div class="nav-links" id="navLinks">
             <a href="#about" data-i18n="nav.about">Σχετικά</a>
             <a href="#services" data-i18n="nav.services">Υπηρεσίες</a>
@@ -575,6 +576,31 @@
                 <h3 data-i18n="res6.title">sepenet.gr</h3>
                 <p data-i18n="res6.text">Πλατφόρμα για την online αναγγελία Τεχνικού Ασφαλείας στο ΣΕΠΕ — γρήγορη και εύκολη ηλεκτρονική διαδικασία.</p>
             </a>
+            <a class="resource-card" data-reveal href="https://osha.europa.eu/el" target="_blank" rel="noopener">
+                <div class="resource-icon"><i class="fa-solid fa-earth-europe"></i></div>
+                <h3 data-i18n="res7.title">EU-OSHA</h3>
+                <p data-i18n="res7.text">Ευρωπαϊκός Οργανισμός για την Ασφάλεια & Υγεία στην Εργασία — οδηγοί, εκστρατείες και βέλτιστες πρακτικές.</p>
+            </a>
+            <a class="resource-card" data-reveal href="https://www.ilo.org/safework" target="_blank" rel="noopener">
+                <div class="resource-icon"><i class="fa-solid fa-globe"></i></div>
+                <h3 data-i18n="res8.title">ILO — Διεθνής Εργασία</h3>
+                <p data-i18n="res8.text">Διεθνής Οργανισμός Εργασίας — πρότυπα, εργαλεία και εκπαιδευτικό υλικό για Υ&Α παγκοσμίως.</p>
+            </a>
+            <a class="resource-card" data-reveal href="https://www.efka.gov.gr/el/ergatikaatyhemata" target="_blank" rel="noopener">
+                <div class="resource-icon"><i class="fa-solid fa-file-medical"></i></div>
+                <h3 data-i18n="res9.title">ΙΚΑ — Εργατικά Ατυχήματα</h3>
+                <p data-i18n="res9.text">Οδηγός αποζημίωσης εργατικών ατυχημάτων και επαγγελματικών ασθενειών μέσω ΕΦΚΑ/ΙΚΑ.</p>
+            </a>
+            <a class="resource-card" data-reveal href="https://eody.gov.gr/" target="_blank" rel="noopener">
+                <div class="resource-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                <h3 data-i18n="res10.title">ΚΕΕΛΠΝΟ / ΕΟΔΥ</h3>
+                <p data-i18n="res10.text">Εθνικός Οργανισμός Δημόσιας Υγείας — πρωτόκολλα υγιεινής και ασφάλειας για εργασιακούς χώρους.</p>
+            </a>
+            <a class="resource-card" data-reveal href="https://www.asep.gr/" target="_blank" rel="noopener">
+                <div class="resource-icon"><i class="fa-solid fa-id-card"></i></div>
+                <h3 data-i18n="res11.title">ΑΣΕΠ — Τεχνικός Ασφαλείας</h3>
+                <p data-i18n="res11.text">Επίσημος κατάλογος πιστοποιημένων Τεχνικών Ασφαλείας και προϋποθέσεις αναγνώρισης προσόντων.</p>
+            </a>
         </div>
 
         <!-- Mobile-only: infinite slow carousel strip (grid hidden on mobile) -->
@@ -587,13 +613,23 @@
                 <a class="resource-card" href="https://oira.osha.europa.eu/en/Partners/hellenic-ministry-labour-and-social-affairs" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div><h3 data-i18n="res4.title">OiRA — Εκτίμηση Κινδύνου</h3><p data-i18n="res4.text">Διαδραστικά εργαλεία εκτίμησης επαγγελματικού κινδύνου ανά κλάδο.</p></a>
                 <a class="resource-card" href="https://www.gov.gr/upourgeia/oloi-foreis/epitheorese-ergasias/anaggelia-ergatikou-atukhematos" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-triangle-exclamation"></i></div><h3 data-i18n="res5.title">Αναγγελία Ατυχήματος</h3><p data-i18n="res5.text">Επίσημη διαδικασία αναγγελίας εργατικού ατυχήματος μέσω gov.gr.</p></a>
                 <a class="resource-card" href="https://e-services.hli.gov.gr/" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-computer-mouse"></i></div><h3 data-i18n="res6.title">sepenet.gr</h3><p data-i18n="res6.text">Πλατφόρμα για την online αναγγελία Τεχνικού Ασφαλείας στο ΣΕΠΕ.</p></a>
+                <a class="resource-card" href="https://osha.europa.eu/el" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-earth-europe"></i></div><h3 data-i18n="res7.title">EU-OSHA</h3><p data-i18n="res7.text">Ευρωπαϊκός Οργανισμός για την Ασφάλεια & Υγεία στην Εργασία — οδηγοί και βέλτιστες πρακτικές.</p></a>
+                <a class="resource-card" href="https://www.ilo.org/safework" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-globe"></i></div><h3 data-i18n="res8.title">ILO — Διεθνής Εργασία</h3><p data-i18n="res8.text">Διεθνής Οργανισμός Εργασίας — πρότυπα και εκπαιδευτικό υλικό Υ&Α.</p></a>
+                <a class="resource-card" href="https://www.efka.gov.gr/el/ergatikaatyhemata" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-file-medical"></i></div><h3 data-i18n="res9.title">ΙΚΑ — Εργατικά Ατυχήματα</h3><p data-i18n="res9.text">Οδηγός αποζημίωσης εργατικών ατυχημάτων μέσω ΕΦΚΑ/ΙΚΑ.</p></a>
+                <a class="resource-card" href="https://eody.gov.gr/" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-heart-pulse"></i></div><h3 data-i18n="res10.title">ΚΕΕΛΠΝΟ / ΕΟΔΥ</h3><p data-i18n="res10.text">Πρωτόκολλα υγιεινής και ασφάλειας για εργασιακούς χώρους.</p></a>
+                <a class="resource-card" href="https://www.asep.gr/" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-id-card"></i></div><h3 data-i18n="res11.title">ΑΣΕΠ — Τεχνικός Ασφαλείας</h3><p data-i18n="res11.text">Κατάλογος πιστοποιημένων Τεχνικών Ασφαλείας και προϋποθέσεις αναγνώρισης.</p></a>
                 <!-- Duplicate set for seamless loop -->
-                <a class="resource-card" aria-hidden="true" href="https://www.elinyae.gr/" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-book"></i></div><h3 data-i18n="res1.title">ΕΛΙΝΥΑΕ</h3><p data-i18n="res1.text">Ελληνικό Ινστιτούτο Υγιεινής και Ασφάλειας της Εργασίας — νέες εκδόσεις, μελέτες, εκπαιδευτικό υλικό.</p></a>
-                <a class="resource-card" aria-hidden="true" href="https://www.e-nomothesia.gr/kat-ergasia-koinonike-asphalise/n-3850-2010.html" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-scale-balanced"></i></div><h3 data-i18n="res2.title">Νόμος 3850/2010</h3><p data-i18n="res2.text">Κωδικοποιημένο κείμενο του Ν. 3850/2010 — ο βασικός νόμος για την Υγεία και Ασφάλεια στην Εργασία.</p></a>
-                <a class="resource-card" aria-hidden="true" href="https://www.hli.gov.gr/asfaleia-kai-ygeia/" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-shield-halved"></i></div><h3 data-i18n="res3.title">Επιθεώρηση Εργασίας</h3><p data-i18n="res3.text">Επίσημος φορέας ελέγχου εφαρμογής της εργατικής νομοθεσίας — Υποχρεώσεις εργοδότη, Έντυπα.</p></a>
-                <a class="resource-card" aria-hidden="true" href="https://oira.osha.europa.eu/en/Partners/hellenic-ministry-labour-and-social-affairs" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div><h3 data-i18n="res4.title">OiRA — Εκτίμηση Κινδύνου</h3><p data-i18n="res4.text">Διαδραστικά εργαλεία εκτίμησης επαγγελματικού κινδύνου ανά κλάδο.</p></a>
+                <a class="resource-card" aria-hidden="true" href="https://www.elinyae.gr/" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-book"></i></div><h3 data-i18n="res1.title">ΕΛΙΝΥΑΕ</h3><p data-i18n="res1.text">Ελληνικό Ινστιτούτο Υγιεινής και Ασφάλειας της Εργασίας.</p></a>
+                <a class="resource-card" aria-hidden="true" href="https://www.e-nomothesia.gr/kat-ergasia-koinonike-asphalise/n-3850-2010.html" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-scale-balanced"></i></div><h3 data-i18n="res2.title">Νόμος 3850/2010</h3><p data-i18n="res2.text">Ο βασικός νόμος για την Υγεία και Ασφάλεια στην Εργασία.</p></a>
+                <a class="resource-card" aria-hidden="true" href="https://www.hli.gov.gr/asfaleia-kai-ygeia/" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-shield-halved"></i></div><h3 data-i18n="res3.title">Επιθεώρηση Εργασίας</h3><p data-i18n="res3.text">Υποχρεώσεις εργοδότη, ρόλος Τεχνικού Ασφαλείας, Έντυπα.</p></a>
+                <a class="resource-card" aria-hidden="true" href="https://oira.osha.europa.eu/en/Partners/hellenic-ministry-labour-and-social-affairs" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div><h3 data-i18n="res4.title">OiRA — Εκτίμηση Κινδύνου</h3><p data-i18n="res4.text">Εργαλεία εκτίμησης επαγγελματικού κινδύνου ανά κλάδο.</p></a>
                 <a class="resource-card" aria-hidden="true" href="https://www.gov.gr/upourgeia/oloi-foreis/epitheorese-ergasias/anaggelia-ergatikou-atukhematos" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-triangle-exclamation"></i></div><h3 data-i18n="res5.title">Αναγγελία Ατυχήματος</h3><p data-i18n="res5.text">Επίσημη διαδικασία αναγγελίας εργατικού ατυχήματος μέσω gov.gr.</p></a>
-                <a class="resource-card" aria-hidden="true" href="https://e-services.hli.gov.gr/" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-computer-mouse"></i></div><h3 data-i18n="res6.title">sepenet.gr</h3><p data-i18n="res6.text">Πλατφόρμα για την online αναγγελία Τεχνικού Ασφαλείας στο ΣΕΠΕ.</p></a>
+                <a class="resource-card" aria-hidden="true" href="https://e-services.hli.gov.gr/" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-computer-mouse"></i></div><h3 data-i18n="res6.title">sepenet.gr</h3><p data-i18n="res6.text">Online αναγγελία Τεχνικού Ασφαλείας στο ΣΕΠΕ.</p></a>
+                <a class="resource-card" aria-hidden="true" href="https://osha.europa.eu/el" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-earth-europe"></i></div><h3 data-i18n="res7.title">EU-OSHA</h3><p data-i18n="res7.text">Ευρωπαϊκός Οργανισμός Ασφάλειας & Υγείας — οδηγοί και βέλτιστες πρακτικές.</p></a>
+                <a class="resource-card" aria-hidden="true" href="https://www.ilo.org/safework" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-globe"></i></div><h3 data-i18n="res8.title">ILO — Διεθνής Εργασία</h3><p data-i18n="res8.text">Πρότυπα και εκπαιδευτικό υλικό Υ&Α διεθνώς.</p></a>
+                <a class="resource-card" aria-hidden="true" href="https://www.efka.gov.gr/el/ergatikaatyhemata" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-file-medical"></i></div><h3 data-i18n="res9.title">ΙΚΑ — Εργατικά Ατυχήματα</h3><p data-i18n="res9.text">Αποζημίωση εργατικών ατυχημάτων μέσω ΕΦΚΑ/ΙΚΑ.</p></a>
+                <a class="resource-card" aria-hidden="true" href="https://eody.gov.gr/" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-heart-pulse"></i></div><h3 data-i18n="res10.title">ΚΕΕΛΠΝΟ / ΕΟΔΥ</h3><p data-i18n="res10.text">Πρωτόκολλα υγιεινής για εργασιακούς χώρους.</p></a>
+                <a class="resource-card" aria-hidden="true" href="https://www.asep.gr/" target="_blank" rel="noopener"><div class="resource-icon"><i class="fa-solid fa-id-card"></i></div><h3 data-i18n="res11.title">ΑΣΕΠ — Τεχνικός Ασφαλείας</h3><p data-i18n="res11.text">Κατάλογος πιστοποιημένων Τεχνικών Ασφαλείας.</p></a>
             </div>
         </div>
     </section>
