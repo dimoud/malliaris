@@ -151,7 +151,7 @@
             en: 'We are available for any question or need. Contact us today by filling in the form or booking a 15-minute phone appointment.',
         },
         'contact.role':    { el: 'Τεχνικός Ασφαλείας — MEng, ASP®', en: 'Safety Officer — MEng, ASP®' },
-        'contact.calendly':{ el: 'ΚΛΕΙΣΤΕ 📞 ΡΑΝΤΕΒΟΥ',              en: 'BOOK 📞 APPOINTMENT' },
+        'contact.calendly':{ el: 'ΚΛΕΙΣΤΕ ΡΑΝΤΕΒΟΥ',                  en: 'BOOK APPOINTMENT' },
 
         /* FORM */
         'form.title':          { el: 'Φόρμα επικοινωνίας',        en: 'Contact Form' },

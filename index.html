@@ -823,7 +823,6 @@
     <script src="custom-animations.js"></script>
 
     <script>
-    /* ── Sectors carousel — arrows + scroll wheel + touch swipe ── */
     /* ── Infinite drag carousel factory ── */
     function makeInfiniteCarousel(wrapId, trackId, autoSpeed, btnLId, btnRId, cardSelector) {
         var wrap  = document.getElementById(wrapId);
@@ -834,9 +833,10 @@
 
         /* Kill CSS animation — JS drives everything */
         track.style.animation = 'none';
+        track.style.animationPlayState = 'paused';
 
-        var pos      = 0;     /* scroll position in px (increases = moves left) */
-        var vel      = 0;     /* user-imparted velocity px/frame */
+        var pos      = 0;     /* scroll position in px */
+        var vel      = 0;     /* momentum velocity px/frame */
         var dragging = false;
         var lastT    = performance.now();
 
@@ -856,10 +856,11 @@
             lastT = now;
 
             if (!dragging) {
-                vel *= 0.96;                          /* friction — longer coast */
-                pos += autoSpeed * (dt / 16) + vel;  /* auto-scroll + momentum */
+                vel *= 0.94;                          /* friction */
+                if (Math.abs(vel) < 0.05) vel = 0;   /* kill micro-jitter */
+                pos += autoSpeed * (dt / 16) + vel;
             } else {
-                pos += vel;                           /* pure drag, vel set by pointer */
+                pos += vel;
             }
 
             wrapPos();
@@ -868,10 +869,11 @@
         })(performance.now());
 
         /* ── Mouse drag ── */
-        var dragStartX = 0, dragStartPos = 0, prevX = 0, prevT = 0;
+        var dragStartX = 0, dragStartPos = 0;
+        var prevX = 0, prevT = 0, prevVel = 0;
         wrap.addEventListener('mousedown', function(e) {
-            dragging  = true;
-            vel       = 0;
+            dragging = true;
+            vel = 0; prevVel = 0;
             dragStartX = e.clientX;
             dragStartPos = pos;
             prevX = e.clientX; prevT = performance.now();
@@ -881,7 +883,10 @@
         window.addEventListener('mousemove', function(e) {
             if (!dragging) return;
             var now = performance.now(), dt = now - prevT || 1;
-            vel = -(e.clientX - prevX) / dt * 16;
+            var rawVel = -(e.clientX - prevX) / dt * 16;
+            /* Smooth velocity — 70% new, 30% previous to avoid end-of-drag jitter */
+            vel = rawVel * 0.7 + prevVel * 0.3;
+            prevVel = vel;
             prevX = e.clientX; prevT = now;
             pos = dragStartPos - (e.clientX - dragStartX);
         });
@@ -893,45 +898,43 @@
 
         /* ── Mouse wheel — horizontal only ── */
         wrap.addEventListener('wheel', function(e) {
-            if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return; /* ignore vertical scroll */
+            if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
             e.preventDefault();
             vel += e.deltaX * 0.4;
         }, {passive: false});
 
         /* ── Touch — horizontal only ── */
-        var tPrevX = 0, tPrevT = 0, tStartX = 0, tStartY = 0, tStartPos = 0, tLocked = null;
+        var tPrevX = 0, tPrevT = 0, tStartX = 0, tStartY = 0, tStartPos = 0;
+        var tLocked = null, tPrevVel = 0;
         wrap.addEventListener('touchstart', function(e) {
-            vel = 0;
+            vel = 0; tPrevVel = 0;
             tStartX = tPrevX = e.touches[0].clientX;
             tStartY = e.touches[0].clientY;
             tStartPos = pos;
             tPrevT = performance.now();
-            tLocked = null; /* direction not yet determined */
+            tLocked = null;
         }, {passive: true});
         wrap.addEventListener('touchmove', function(e) {
             var dx = e.touches[0].clientX - tStartX;
             var dy = e.touches[0].clientY - tStartY;
-            /* determine lock direction on first significant move */
             if (tLocked === null && (Math.abs(dx) > 4 || Math.abs(dy) > 4)) {
                 tLocked = Math.abs(dx) >= Math.abs(dy) ? 'h' : 'v';
             }
-            if (tLocked !== 'h') return; /* vertical swipe — let page scroll */
+            if (tLocked !== 'h') return;
             e.preventDefault();
             dragging = true;
             var now = performance.now(), dt = now - tPrevT || 1;
-            vel = -(e.touches[0].clientX - tPrevX) / dt * 16;
+            var rawVel = -(e.touches[0].clientX - tPrevX) / dt * 16;
+            /* Smooth velocity — prevent last-frame jitter becoming release velocity */
+            vel = rawVel * 0.7 + tPrevVel * 0.3;
+            tPrevVel = vel;
             tPrevX = e.touches[0].clientX; tPrevT = now;
             pos = tStartPos - dx;
         }, {passive: false});
         wrap.addEventListener('touchend', function() {
             dragging = false; tLocked = null;
-            /* Overshoot pulse: briefly push past then snap back via friction */
-            if (Math.abs(vel) > 2) {
-                var overshoot = vel * 0.22;
-                vel += overshoot;
-                /* After 3 frames, counter the overshoot — simulates rubber-band snap */
-                setTimeout(function() { vel -= overshoot * 1.6; }, 50);
-            }
+            /* Clamp release velocity to prevent sudden lurches */
+            vel = Math.max(-18, Math.min(18, vel));
         }, {passive: true});
 
         /* ── Arrow buttons ── */
@@ -954,20 +957,20 @@
 
     /* Sectors: carousel on desktop/tablet, static grid on mobile (carousel hidden via CSS) */
     if (!isMobile) {
-        makeInfiniteCarousel('sectorsWrap', 'sectorsTrack', 1.4, 'sectorsLeft', 'sectorsRight', '.sector-carousel-card');
+        makeInfiniteCarousel('sectorsWrap', 'sectorsTrack', 1.12, 'sectorsLeft', 'sectorsRight', '.sector-carousel-card');
     }
 
-    /* In-action work photos: left-moving strip (positive = moves left) */
-    makeInfiniteCarousel('actionStripWrap', 'actionStrip', isMobile ? 0.5 : 1.8, null, null, null);
+    /* In-action work photos: left-moving strip */
+    makeInfiniteCarousel('actionStripWrap', 'actionStrip', isMobile ? 0.4 : 1.44, null, null, null);
 
-    /* Resources: opposite direction (negative speed = moves right) — same speed magnitude as action strip */
+    /* Resources: opposite direction */
     (function () {
         var rsGrid = document.querySelector('.resources-grid');
         var rsWrap = document.getElementById('resourcesStripWrap');
         if (!rsWrap) return;
         if (rsGrid) rsGrid.style.display = 'none';
         rsWrap.style.display = 'block';
-        makeInfiniteCarousel('resourcesStripWrap', 'resourcesStrip', isMobile ? -0.5 : -1.8, null, null, null);
+        makeInfiniteCarousel('resourcesStripWrap', 'resourcesStrip', isMobile ? -0.4 : -1.44, null, null, null);
     })();
 
     /* ── Service cards — mobile tap-to-reveal ── */

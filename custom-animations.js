@@ -9,52 +9,8 @@
     function qs(sel, ctx) { return (ctx || document).querySelector(sel); }
     function qsa(sel, ctx) { return Array.from((ctx || document).querySelectorAll(sel)); }
 
-    /* ─── 1. INFINITE STRIP — Sectors ─────────────────────────────────── */
-    (function () {
-        var wrap  = qs('#sectorsWrap');
-        var track = qs('#sectorsTrack');
-        if (!wrap || !track) return;
-
-        /* Pause on hover */
-        wrap.addEventListener('mouseenter', function () {
-            track.style.animationPlayState = 'paused';
-        });
-        wrap.addEventListener('mouseleave', function () {
-            track.style.animationPlayState = 'running';
-        });
-
-        /* Touch swipe: speed up briefly on swipe */
-        var tx = 0;
-        wrap.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; }, { passive: true });
-        wrap.addEventListener('touchend', function (e) {
-            var diff = tx - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 30) {
-                track.style.animationPlayState = 'running';
-            }
-        }, { passive: true });
-    })();
-
-    /* ─── 2. INFINITE STRIP — In Action ───────────────────────────────── */
-    (function () {
-        var wrap  = qs('#actionStripWrap');
-        var strip = qs('#actionStrip');
-        if (!wrap || !strip) return;
-
-        wrap.addEventListener('mouseenter', function () {
-            strip.style.animationPlayState = 'paused';
-        });
-        wrap.addEventListener('mouseleave', function () {
-            strip.style.animationPlayState = 'running';
-        });
-
-        /* Touch pause on press */
-        wrap.addEventListener('touchstart', function () {
-            strip.style.animationPlayState = 'paused';
-        }, { passive: true });
-        wrap.addEventListener('touchend', function () {
-            strip.style.animationPlayState = 'running';
-        }, { passive: true });
-    })();
+    /* ─── 1 & 2. INFINITE STRIPS — JS-driven via makeInfiniteCarousel ──── */
+    /* CSS animation is killed by the carousel factory; no handlers needed here. */
 
     /* ─── 3–6. POINTER-ONLY EFFECTS (skip on touch devices) ───────────── */
     if (!window.matchMedia('(hover: none)').matches) {
